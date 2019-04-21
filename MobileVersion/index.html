@@ -1,0 +1,165 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dark Humour</title>
+  <style>
+    body{
+      margin: 0;
+    }
+
+    a{
+      text-decoration: none;
+    }
+
+    #topHeader{
+      overflow:hidden;
+      background-color: #f1f1f1;
+      padding: 20px 10px;
+      position: sticky;
+    }
+    
+    #Title{
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    #sideNav{
+      width:100%;
+      height:3%;
+      left:0;
+      background-color: #111;
+      padding: 20px;
+    }
+
+    #SOptions{
+      color: #818181;
+      font-family: "Lato", sans-serif;
+      text-align: center;
+      font-size: 10px;
+      widthL: 25%;
+    }
+
+
+
+
+
+    #PhSection{
+       position:fixed;
+       height: 100%;
+    }
+
+
+
+      
+    .Ig{
+        height : 22.5vmax;
+        margin-right : 20px;
+        border-radius : 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        
+    }
+
+   </style>
+</head>
+
+
+
+<body>
+
+  <!-- Title/Header -->
+  <div id = "topHeader">
+    <div id="Title">Dark Humour</div>
+  </div>
+
+  
+  <!-- Side Navigation -->
+  <div id="sideNav">
+    <a id="SOptions" href="#default">Dark Humour Goes Japan</a>
+  </div>
+  
+
+
+  <!-- Image Section -->
+  <div id = "PhSection">
+  </div>
+ 
+
+
+  <script src="jquery-3.3.1.min.js"></script>
+
+  <script>
+
+  //DOM Nodes to be used in Javascript
+  ImageEl = document.getElementById("PhSection");
+  JapOption = document.getElementById("SOptions");
+
+  
+  //Bind
+  $(JapOption).bind("mouseenter",function(){JapOption.style.color = "#f1f1f1";});
+  $(JapOption).bind("mouseleave",function(){JapOption.style.color = "#818181";});
+
+
+  //Variables needed
+  var ImageSet = [];  //Element to store images
+  var clicked = 0;  //Check what was cliced
+
+
+  //Functions
+
+  //Image Appear
+  var ImageAppearJp = function(){
+    if (clicked === 0){
+      //Add scroll, allowing us to see all images
+      ImageEl.style.overflow = "scroll";
+
+      //Creating Image element to add images
+      var japImg = document.createElement("img");
+   
+      //Giving property to images
+      japImg.classList.add("Ig");
+
+      //Adding Image to japImg then appending to div
+      for (var i = 0; i < 27; i++){
+        var x = i + 1
+        japImg.src = "JapanImage/1 (" + x + ").JPEG";
+        ImageSet[i] = japImg.cloneNode(true);
+        }
+      for (var i = 0; i < 27 ; i++){
+        ImageEl.appendChild(ImageSet[i]);
+      }
+
+      //Allow user to know what Image option is displayed
+      $(JapOption).unbind();
+      JapOption.style.color = "#f1f1f1";
+
+
+      clicked = "jap"; //To show japan image was clicked before
+    }
+
+    else{
+      RemoveImg();
+      ImageEl.style.overflow = "auto";
+      JapOption.style.color = "#818181"
+      clicked = 0;
+      $(JapOption).bind("mouseenter",function(){JapOption.style.color = "#f1f1f1";});
+      $(JapOption).bind("mouseleave",function(){JapOption.style.color = "#818181";});
+    }
+  }
+
+  //Remove Image
+  var RemoveImg = function(){
+   for (var i = 0; i < 27 ; i++){
+      ImageEl.removeChild(ImageSet[i]);
+    }
+  }
+
+
+  //Code when interaction is made
+  if (clicked === 0){
+    JapOption.addEventListener("click",ImageAppearJp);
+  }
+  </script>
+</body>
+</html>
