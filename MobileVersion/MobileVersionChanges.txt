@@ -17,7 +17,7 @@
       background-color: #f1f1f1;
       padding: 20px 10px;
       position: sticky;
-      height: 3%;
+      height: 4%;
     }
     
     #Title{
@@ -27,10 +27,10 @@
 
     #TopNav{
       width:100%;
-      height:2%;
+      height:3%;
       left:0;
       background-color: #111;
-      padding: 20px;
+      padding: 15px;
     }
 
     #SOptions{
@@ -47,7 +47,7 @@
 
     #PhSection{
        position:fixed;
-       height: 100%;
+       height: 90%;
     }
 
 
@@ -114,6 +114,7 @@
     if (clicked === 0){
       //Add scroll, allowing us to see all images
       ImageEl.style.overflow = "scroll";
+      ImageEl.style.overflowX = "hidden";
 
       //Creating Image element to add images
       var japImg = document.createElement("img");
