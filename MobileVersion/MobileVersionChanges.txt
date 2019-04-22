@@ -38,7 +38,7 @@
       font-family: "Lato", sans-serif;
       text-align: center;
       font-size: 20px;
-      widthL: 25%;
+      width: 25%;
     }
 
 
