@@ -47,7 +47,7 @@
 
     #PhSection{
        position:fixed;
-       height: 90%;
+       height: 85%;
     }
 
 
