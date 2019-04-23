@@ -37,8 +37,8 @@
       color: #818181;
       font-family: "Lato", sans-serif;
       text-align: center;
-      font-size: 20px;
-      width: 25%;
+      font-size: 4vw;
+      width: 20%;
     }
 
 
@@ -77,7 +77,7 @@
   
   <!-- Side Navigation -->
   <div id="TopNav">
-    <a id="SOptions" href="#default">Dark Humour Goes Japan</a>
+    <div id="SOptions" href="#default">Dark Humour Goes Japan</div>
   </div>
   
 
