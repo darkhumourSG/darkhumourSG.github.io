@@ -1,9 +1,8 @@
-
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>JS Bin</title>
+  <title>Dark Humour</title>
   <style>
     body{
       margin: 0;
@@ -50,32 +49,22 @@
        float:left;
        position:fixed;
        left:210px;
-       height: 100%;
+       height: 90%;
+
     }
 
 
 
-    #jap{
-      font-size:20px;
-      width:30vmax;
-      height:20vmax;
-      font-family:"Arial";
-      border-style:hidden;
-      border-radius:20px;
-      background-color:rgb(220, 222, 226);
-      vertical-align:middle;
-      display:table-cell;
-      padding:20px;
-    }
       
     .Ig{
         height : 22.5vmax;
         margin-right : 20px;
         border-radius : 20px;
         margin-top: 20px;
-        margin-bottom: 20px;
+
         
     }
+
 
    </style>
 </head>
@@ -100,12 +89,21 @@
   <!-- Image Section -->
   <div id = "PhSection">
   </div>
- 
 
+
+  <!-- Bottom Of Page -->
+  <div id = "BtmPage">
+  </div>
 
   <script src="jquery-3.3.1.min.js"></script>
 
   <script>
+  //If viewed from Mobile
+  if (document.documentElement.clientWidth < 900) {
+    window.location = "MobileVersion/"
+  }
+
+
   //DOM Nodes to be used in Javascript
   ImageEl = document.getElementById("PhSection");
   JapOption = document.getElementById("SOptions");
@@ -128,6 +126,7 @@
     if (clicked === 0){
       //Add scroll, allowing us to see all images
       ImageEl.style.overflow = "scroll";
+      ImageEl.style.overflowX = "hidden";
 
       //Creating Image element to add images
       var japImg = document.createElement("img");
@@ -176,3 +175,5 @@
     JapOption.addEventListener("click",ImageAppearJp);
   }
   </script>
+</body>
+</html>
