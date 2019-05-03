@@ -5,15 +5,15 @@
   <title>Dark Humour</title>
   <style>
     body{
-      margin: 0;
+      margin: 0; //Ensures elements fills to the brim
     }
 
     a{
-      text-decoration: none;
+      text-decoration: none; //Helps remove underline on links
     }
 
     #topHeader{
-      overflow:hidden;
+      overflow:hidden; //Serves to adjust elemnt's height to contain any floated children
       background-color: #f1f1f1;
       padding: 20px 10px;
       position: sticky;

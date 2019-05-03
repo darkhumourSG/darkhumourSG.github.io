@@ -5,64 +5,64 @@
   <title>Dark Humour</title>
   <style>
     body{
-      margin: 0;
+      margin: 0px;  /*Ensures elements fills to the brim*/
+      overflow:hidden; /*Prevents page to extend beyond viewport despite percentage height*/
     }
+
 
     a{
-      text-decoration: none;
+      text-decoration: none;  /*Helps remove underline on links*/
     }
 
-    #topHeader{
-      overflow:hidden;
-      background-color: #f1f1f1;
-      padding: 20px 10px;
-      position: sticky;
+
+    #TitleDivision{
+      background-color: rgb(212, 213, 214);
+      height: 8%;
+      width: 100%;  /*Setting width and height of div*/
     }
-    
+
+
     #Title{
-      font-size: 25px;
-      font-weight: bold;
+      font-size: 24px;
+      font-weight: bold;  /*Designing the font*/
+      padding-left:10px;  /*So words does not stick to the very left*/
+      position: relative;
+      transform: translateY(60%);  /*These 2 lines are for centralising the title vertically*/
     }
 
-    #sideNav{
-      height:100%;
-      width:160px;
-      left:0;
+
+    #SideBar{
+      height:92%;  /*Height set to fit the space from top to bottom*/
+      top:8%;  /*Needed to prevent width from increasing. Overlapping div problem?*/
+      text-align: center;  /*Helps centralise lines*/
+      padding: 20px; /*Ensure lines are centralise properly else 2 lines will be zigged zagged.*/
+      width:10%;
       background-color: #111;
-      position: fixed;
-      padding: 20px;
-      clear:both;
     }
 
-    #SOptions{
+
+    #SideBarOptions{
       color: #818181;
       font-family: "Lato", sans-serif;
-      text-align: center;
       font-size: 20px;
     }
 
 
-
-
-
     #PhSection{
-       float:left;
-       position:fixed;
-       left:210px;
-       height: 90%;
+       position:fixed;  /*Photo will not show without it*/
+       transform: translateX(13%);  /*Prevent Overlapping with sidebar. Why not exactly 10%?*/
+       top:8%;  /*Needed else Photo does not appear. Nu,ber taken from height of top bar*/
+       height: 90%;  /*Not max height to allow some spacing in the bottom*/
 
     }
-
-
-
-      
+     
+ 
     .Ig{
+        /*Setting dimensions for images*/
         height : 22.5vmax;
         margin-right : 20px;
         border-radius : 20px;
-        margin-top: 20px;
-
-        
+        margin-top: 20px; 
     }
 
 
@@ -74,14 +74,14 @@
 <body>
 
   <!-- Title/Header -->
-  <div id = "topHeader">
+  <div id = "TitleDivision">
     <div id="Title">Dark Humour</div>
   </div>
 
   
   <!-- Side Navigation -->
-  <div id="sideNav">
-    <a id="SOptions" href="#default">Dark Humour Goes Japan</a>
+  <div id="SideBar">
+    <a id="SideBarOptions" href="#default">Dark Humour Goes Japan</a>
   </div>
   
 
@@ -106,7 +106,7 @@
 
   //DOM Nodes to be used in Javascript
   ImageEl = document.getElementById("PhSection");
-  JapOption = document.getElementById("SOptions");
+  JapOption = document.getElementById("SideBarOptions");
 
   
   //Bind
