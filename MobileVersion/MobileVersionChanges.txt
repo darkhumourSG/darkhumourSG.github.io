@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dark Humour</title>
   <style>
-
+    body{
+      margin: 0; //ensures the body sticks to the ends of the screen
+    }
 
     a{
       text-decoration: none; //prevent link tags to be underlined
